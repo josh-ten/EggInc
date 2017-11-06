@@ -5,7 +5,7 @@ function Hatchery() {
     this.height = 100;
 
     Hatchery.prototype.draw = function() {
-        fill(0);
+        fill(10, 140, 240);
         rect(this.x, this.y, this.width, this.height);
     }
 }

@@ -1,6 +1,6 @@
 function Chicken() {
     this.travelPoints = [];
-    this.travelPoints.push(createVector(width/2, 300));
+    this.travelPoints.push(createVector(width/2, 250));
     this.travelPoints.push(createVector(width/2, 150));
 
     this.houseChoice = floor(random(0, 2.99));    
@@ -28,7 +28,7 @@ function Chicken() {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
 
-    this.maxspeed = 15;
+    this.maxspeed = 10;
 
 
     Chicken.prototype.update = function() {

@@ -8,6 +8,9 @@ function Clicker() {
         noStroke();
         fill(255, 0, 0);
         rect(this.x, this.y, this.width, this.height);
+        textSize(25);
+        fill(0);
+        text("CLICK!", this.x+10, this.y+this.height-12);
     }
 
     Clicker.prototype.click = function() {
