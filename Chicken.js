@@ -2,12 +2,21 @@ function Chicken() {
     this.travelPoints = [];
     this.travelPoints.push(createVector(width/2, 300));
     this.travelPoints.push(createVector(width/2, 150));
-    
+
     this.houseChoice = floor(random(0, 2.99));    
     switch (this.houseChoice) {
-        case 0: this.travelPoints.push(createVector(100, 100)); break;
-        case 1: this.travelPoints.push(createVector(width/2, 100)); break;
-        case 2: this.travelPoints.push(createVector(300, 100)); break;
+        case 0:
+            this.travelPoints.push(createVector(100, 150));
+            this.travelPoints.push(createVector(100, 70));
+            break;
+        case 1: 
+            this.travelPoints.push(createVector(width/2, 150));
+            this.travelPoints.push(createVector(width/2, 70)); 
+            break;
+        case 2: 
+            this.travelPoints.push(createVector(300, 150));
+            this.travelPoints.push(createVector(300, 70)); 
+            break;
     }
 
     this.width = 10;
