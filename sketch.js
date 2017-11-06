@@ -1,14 +1,17 @@
 var clicker;
+var hatchery;
 var chickens = [];
 
 function setup() {
 	createCanvas(400, 400);
 	clicker = new Clicker();
+	hatchery = new Hatchery();
 }
 
 function draw() {
 	background(200);
 	clicker.draw();
+	hatchery.draw();
 	for (var i = 0; i < chickens.length; i++) {
 		chickens[i].update();
 	}
