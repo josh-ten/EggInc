@@ -5,7 +5,8 @@ function Clicker() {
     this.y = height - this.height - 20;
 
     Clicker.prototype.draw = function() {
-        fill(0);
+        noStroke();
+        fill(255, 0, 0);
         rect(this.x, this.y, this.width, this.height);
     }
 
