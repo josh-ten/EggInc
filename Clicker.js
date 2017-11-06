@@ -10,6 +10,6 @@ function Clicker() {
     }
 
     Clicker.prototype.click = function() {
-        console.log("CLICK");
+        spawnChicken();
     }
 }

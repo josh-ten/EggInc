@@ -1,4 +1,5 @@
 var clicker;
+var chickens = [];
 
 function setup() {
 	createCanvas(400, 400);
@@ -8,6 +9,9 @@ function setup() {
 function draw() {
 	background(200);
 	clicker.draw();
+	for (var i = 0; i < chickens.length; i++) {
+		chickens[i].update();
+	}
 }
 
 function mousePressed() {
@@ -21,4 +25,9 @@ function collision(x, y, obj) {
 			x < obj.x + obj.width &&
 			y > obj.y &&
 			y < obj.y + obj.height);
+}
+
+function spawnChicken() {
+	var chicken = new Chicken();
+	chickens.push(chicken);
 }
