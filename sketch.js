@@ -1,7 +1,8 @@
 var clicker;
+var research;
 var hatchery;
 var chickens = [];
-var numChickens;
+var numChickens, multiplier;
 var housing = [];
 var GUI;
 var Background;
@@ -9,7 +10,9 @@ var Background;
 function setup() {
 	createCanvas(400, 400);
 	numChickens = 0;
-	clicker = new Clicker();
+	multiplier = 0;
+	clicker = new Button(width/2-50, height-60, 100, 40, "CLICK!", spawnChicken);
+	research = new Button(50, height-60, 40, 40, "R", upgrade);	
 	hatchery = new Hatchery();
 	housing.push(new Housing(35));
 	housing.push(new Housing(150));
@@ -40,12 +43,12 @@ function draw() {
 	}
 	GUI.draw();
 	clicker.draw();
-	
+	research.draw();	
 }
 
 function mousePressed() {
 	if (collision(mouseX, mouseY, clicker)) {
-		clicker.click();
+		clicker.executeFn();
 	}
 }
 
@@ -77,4 +80,11 @@ function spawnChicken() {
 	var chicken = new Chicken();
 	chickens.push(chicken);
 	numChickens++;
+}
+
+function upgrade() {
+	console.log("yea");
+	if (numChickens >= Math.pow(10, multiplier)) {
+		multiplier++;
+	}
 }
