@@ -4,20 +4,23 @@ var chickens = [];
 var numChickens;
 var housing = [];
 var GUI;
+var Background;
 
 function setup() {
 	createCanvas(400, 400);
 	numChickens = 0;
 	clicker = new Clicker();
 	hatchery = new Hatchery();
-	housing.push(new Housing(35, 30));
-	housing.push(new Housing(150, 30));
-	housing.push(new Housing(265, 30));
+	housing.push(new Housing(35));
+	housing.push(new Housing(150));
+	housing.push(new Housing(265));
 	GUI = new GUI();
+	Background = new Background();
 }
 
 function draw() {
-	background(200);
+	background(50, 220, 0);
+	noStroke();
 	for (var i = 0; i < housing.length; i++) {
 		for (var j = 0; j < chickens.length; j++) {
 			if (objectCollision(housing[i], chickens[j])) {
@@ -26,15 +29,18 @@ function draw() {
 			}
 		}
 	}
-	clicker.draw();
+	Background.draw();
 	for (var i = 0; i < chickens.length; i++) {
 		chickens[i].update();
 	}
+	rotate(0);
 	hatchery.draw();	
 	for (var i = 0; i < housing.length; i++) {
 		housing[i].draw();
 	}
 	GUI.draw();
+	clicker.draw();
+	
 }
 
 function mousePressed() {
